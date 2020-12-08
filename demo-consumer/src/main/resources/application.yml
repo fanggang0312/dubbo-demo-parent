@@ -1,0 +1,23 @@
+server:
+  port: 8082 #端口
+  servlet:
+    context-path: /demo-consumer #访问项目名称
+  tomcat:
+    uri-encoding: UTF-8
+    max-connections: 10000 # tomcat最大连接数
+    threads:
+      max: 200 #tomcat最大线程数
+
+dubbo:
+  application:
+    name: demo-consumer
+  registry:
+    address: zookeeper://localhost:2181
+
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo?autoReconnect=true&useUnicode=true&characterEncoding=utf-8&failOverReadOnly=false&useSSL=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    username: root
+    password: 123456
